@@ -1,0 +1,85 @@
+# items.http
+### create
+POST http://localhost:3000/items
+Content-Type: application/json
+
+{
+    "title": "Keyboard",
+    "amount": 8,
+    "price": 4500,
+    "contactMobileNo": "0891233569"
+}
+
+# Test docker db
+# {
+#     "title": "Mouse",
+#     "amount": 10,
+#     "quantity": 5000
+# }
+
+### find all
+GET http://localhost:3000/items
+
+### find one
+GET http://localhost:3000/items/1
+
+### update
+PATCH http://localhost:3000/items/1
+Content-Type: application/json
+
+{
+    "title": "Mouse wireless",
+    "contactMobileNo": "0891234567"
+}
+
+### delete
+DELETE http://localhost:3000/items/2
+
+
+### validation using pipe
+### find one by string
+GET http://localhost:3000/items/A
+
+
+### create with wrong amount number type
+POST http://localhost:3000/items
+Content-Type: application/json
+
+{
+    "title": "Printer",
+    "amount": "SHOUD_BE_NUM",
+    "price": 5000    
+}
+
+### search by multi ids
+GET http://localhost:3000/items/search?ids=1,3
+
+### find all
+GET http://localhost:3000/items
+
+### find one wrong type
+GET http://localhost:3000/items/x
+
+### create with wrong amount number type
+POST http://localhost:3000/items
+Content-Type: application/json
+
+{
+    "title": "",
+    "amount": "SHOUD_BE_NUM",
+    "price": 5000    
+}
+
+### delete by string
+DELETE http://localhost:3000/items/one
+
+### create with wrong number type
+POST http://localhost:3000/items
+Content-Type: application/json
+
+{
+    "title": "",
+    "amount": "X",
+    "price": 4500,
+    "contactMobileNo": "0891233569"
+}

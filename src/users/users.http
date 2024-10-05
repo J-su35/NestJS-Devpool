@@ -1,0 +1,43 @@
+### create
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "username": "u1001",
+    "password": "abc#1234",
+    "role": "USER"
+}
+
+### Admin Zone
+### create
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "ny3@RG8_e97",
+    "role": "ADMIN"
+}
+
+### Manager Zone
+### create
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "username": "m1001",
+    "password": "changeit",
+    "role": "MANAGER"
+}
+
+### create with description
+### for test exception isNotExists(message)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "username": "u1007",
+    "password": "changeit",
+    "role": "USER",
+    "description": "general user"
+}
